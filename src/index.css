@@ -1,0 +1,24 @@
+@import "tailwindcss";
+@theme {
+  --color-ink: #16130f;
+  --color-panel: #1e1a15;
+  --color-line: #2f2921;
+  --color-paper: #ece4d6;
+  --color-dim: #9a907f;
+  --color-amber: #ffb000;
+  --font-sans: "Schibsted Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; background: var(--color-ink); }
+body { background: var(--color-ink); color: var(--color-paper); font-family: var(--font-sans); }
+:focus-visible { outline: 2px solid var(--color-amber); outline-offset: 3px; border-radius: 4px; }
+::selection { background: var(--color-amber); color: var(--color-ink); }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+/* Project demo "screens": dark glass tinted by the card's accent --c, with faint scanlines. */
+.screen {
+  background:
+    repeating-linear-gradient(0deg, transparent 0 3px, rgb(255 255 255 / 0.018) 3px 4px),
+    radial-gradient(120% 90% at 50% 0%, color-mix(in oklab, var(--c) 16%, transparent), transparent 70%),
+    #0e0c0a;
+  box-shadow: 0 0 0 1px color-mix(in oklab, var(--c) 10%, transparent), 0 14px 40px -20px var(--c);
+}
